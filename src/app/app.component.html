@@ -1,9 +1,13 @@
 <div class="container">
-  <app-cockpit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
+  <app-cockpit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)">
+  </app-cockpit>
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change First Element</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First Element</button>
+      <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement"
+        [name]="serverElement.name">
         <p>This Text is added from the app.component into server-element via ng-content</p>
       </app-server-element>
     </div>
