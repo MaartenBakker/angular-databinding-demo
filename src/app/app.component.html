@@ -8,7 +8,7 @@
       <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy First Element</button>
       <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement"
         [name]="serverElement.name">
-        <p>This Text is added from the app.component into server-element via ng-content</p>
+        <p #contentParagraph>This Text is added from the app.component into server-element via ng-content</p>
       </app-server-element>
     </div>
   </div>
